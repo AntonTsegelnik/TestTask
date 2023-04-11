@@ -1,0 +1,28 @@
+﻿@model ImageViewModel
+
+<h1>Edit</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="col-8">
+                Name: @Html.TextBoxFor(x => x.Name, new{ @Value = Model.Name})
+                @Html.ValidationMessageFor(x => x.Name)
+            </div>
+            <div class="col-8">
+                Image: @Html.TextBoxFor(x => x.Url, new{ @Value = Model.Name})
+                @Html.ValidationMessageFor(x => x.Url)
+            </div>
+            <div>
+                <input type="submit" value="Update " class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">Back to Images</a>
+</div>
+
+
+  

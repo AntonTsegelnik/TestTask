@@ -1,0 +1,60 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border: 5px solid;
+    margin: auto;
+    padding: 15px;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.imageGallery {
+    width: auto;
+    height: 35px;
+
+}
+
+.lock {
+    display: inline-block;
+    border: 1px solid blue;
+    margin: 2px;
+}
+
+.col-6 {
+    display: flex;
+    justify-content: flex-end;
+}
+
+a {
+    text-decoration: none; 
+    color:black;
+} 
+    

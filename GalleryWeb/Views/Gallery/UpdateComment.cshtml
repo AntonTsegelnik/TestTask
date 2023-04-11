@@ -1,0 +1,21 @@
+﻿@model CommentViewModel
+
+<h1>Edit</h1>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="col-8">
+                Text: @Html.TextBoxFor(x => x.Content, new {@Value = Model.Id })
+                @Html.ValidationMessageFor(model => model.Content)
+            </div>
+            <div>
+                <input type="submit" value="Update" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Comments">Back to Comments</a>
+</div>

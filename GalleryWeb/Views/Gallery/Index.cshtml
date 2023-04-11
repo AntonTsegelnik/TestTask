@@ -1,0 +1,68 @@
+﻿@model List<ImageViewModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3">
+    <div class=" row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Gallery</h2>
+        </div>
+        <div class="col-6">
+            <a asp-controller="Gallery" asp-action="CreateImage" class="btn btn-primary" style="height:90%">
+                Create new image
+            </a>
+        </div>
+    </div>
+</div>
+
+@if (Model.Count() > 0)
+{
+    <div class="table">
+        <form action="Gallery/Remove" method="post">
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                </tr>
+                @foreach (var image in Model)
+                {
+                    <tr>
+                        <td>
+
+                            <input type="checkbox" name="ids" value="@image.Id" />
+                            @image.Id
+
+                        </td>
+                        <td>
+                            <a href="Gallery/UpdateImage?id= @image.Id">
+
+                                @image.Name
+
+                            </a>
+                        </td>
+                        <td>
+                            <div>
+                                <a href="Gallery/CreateComment?id= @image.Id" style="accent-color:auto">
+
+                                    <img class="imageGallery" src="@image.Url">
+
+                                </a>
+                            </div>
+
+                        </td>
+                    </tr>
+                }
+            </table>
+            <div>
+                <input type="submit" value="Remove" class="btn btn-outline-danger" />
+            </div>
+
+        </form>
+    </div>
+}
+else
+{
+    <p>No images exists.</p>
+}
